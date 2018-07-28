@@ -21,6 +21,7 @@ import (
 	resources "github.com/hajimehoshi/ebiten/examples/resources/images/flappy"
 	"github.com/hajimehoshi/ebiten/inpututil"
 	"github.com/hajimehoshi/ebiten/text"
+	"path/filepath"
 )
 
 func init() {
@@ -59,17 +60,20 @@ var (
 )
 
 func init() {
-	img, _, err := image.Decode(bytes.NewReader(resources.Gopher_png))
-	if err != nil {
-		log.Fatal(err)
-	}
-	gopherImage, _ = ebiten.NewImageFromImage(img, ebiten.FilterDefault)
-
+	var err error
+	var fname string
+	var img image.Image
 	img, _, err = image.Decode(bytes.NewReader(resources.Tiles_png))
 	if err != nil {
 		log.Fatal(err)
 	}
 	tilesImage, _ = ebiten.NewImageFromImage(img, ebiten.FilterDefault)
+
+	fname = filepath.Join("data","tyler.png")
+	gopherImage, _, err = ebitenutil.NewImageFromFile(fname, ebiten.FilterNearest)
+	if err != nil {
+		log.Fatal(err)
+	}
 }
 
 func init() {
@@ -192,7 +196,7 @@ func (g *Game) Update(screen *ebiten.Image) error {
 	var texts []string
 	switch g.mode {
 	case ModeTitle:
-		texts = []string{"FLAPPY GOPHER", "", "", "", "", "PRESS SPACE KEY", "", "OR TOUCH SCREEN"}
+		texts = []string{"GO FLAPPY TYLER!", "", "", "", "", "PRESS SPACE KEY", "", "OR TOUCH SCREEN"}
 	case ModeGameOver:
 		texts = []string{"", "GAMEOVER!"}
 	}
@@ -203,7 +207,7 @@ func (g *Game) Update(screen *ebiten.Image) error {
 
 	if g.mode == ModeTitle {
 		msg := []string{
-			"Go Flappy Gopher by Andrew St. Pierre",
+		  "By Andrew St. Pierre                ",
 			"Adopted from version by Renee French",
 		}
 		for i, l := range msg {
@@ -349,7 +353,7 @@ func main() {
 	if runtime.GOARCH == "js" {
 		ebiten.SetFullscreen(true)
 	}
-	if err := ebiten.Run(g.Update, screenWidth, screenHeight, 1, "Flappy Gopher Go!"); err != nil {
+	if err := ebiten.Run(g.Update, screenWidth, screenHeight, 1, "Flappy Tyler Go!"); err != nil {
 		panic(err)
 	}
 }
