@@ -1,8 +1,12 @@
 # [go_playground](https://github.com/astpierre/go_playground)
 ## Description
-> _go-playground_ is an environment used to play with / learn the Go language.
+> _go-playground_ is a workspace used to play with / learn the Go language.
 
-## Setup
+
+## Getting Started
+
+* [How to write Go code](https://golang.org/doc/code.html)
+
 
 ## Contents
 
