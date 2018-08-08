@@ -3,9 +3,21 @@
 > _go-playground_ is a workspace used to play with / learn the Go language.
 
 
-## Getting Started
+## Go Flappy Tyler
 
+#
+Gameplay screenshot:
+![alt text][gameover]
+[gameover]: https://github.com/astpierre/go_playground/gameover.png "Go Flappy Tyler Screenshot0"
+#
+Intro prompt screen:
+![alt text][homescreen]
+[homescreen]: https://github.com/astpierre/go_playground/introscreen.png "Go Flappy Tyler Screenshot1"
+
+
+## Getting Started
 * [How to write Go code](https://golang.org/doc/code.html)
+
 
 ## Contents
 
