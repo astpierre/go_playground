@@ -8,10 +8,13 @@
 #
 Gameplay screenshot:
 ![alt text][gameover]
+
 [gameover]: https://github.com/astpierre/go_playground/blob/master/gameover.png "Go Flappy Tyler Screenshot0"
+
 #
 Intro prompt screen:
 ![alt text][homescreen]
+
 [homescreen]: https://github.com/astpierre/go_playground/blob/master/introscreen.png "Go Flappy Tyler Screenshot1"
 
 
